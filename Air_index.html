@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Forest Model Deployment</title>
+    <style>
+        body {
+            background-color: rgb(255, 153, 102);
+        }
+
+        input {
+            border: 1px solid black;
+            height: 25px;
+            width: 200px;
+            border-radius: 3px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            height: 30px;
+            width: 100px;
+            border: none;
+            background-color: rgb(255, 153, 102);
+            color: black;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        table {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            padding: 20px;
+        }
+
+        tr,
+        td {
+            padding-bottom: 5px;
+        }
+    </style>
+
+    <script>
+    </script>
+</head>
+
+<body>
+    <h2>Random Forest Model Deployment</h2>
+    <form action="/predict" method="post">
+        <table>
+
+             <tr>
+                <td><label for="Baggage_handling">Baggage Handling:</label></td>
+                <td> <input type="text" id="Baggage_handling" name="Baggage_handling" required></td>
+            </tr>
+
+            <tr>
+                <td> <label for="Checkin_service">Checkin Service:</label></td>
+                <td> <input type="text" id="Checkin_service" name="Checkin_service" required></td>
+            </tr>
+
+             <tr>
+                <td><label for="Inflight_entertainment">Inflight Entertainment:</label></td>
+                <td> <input type="text" id="Inflight_entertainment" name="Inflight_entertainment" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="On_board_service">Customer Type:</label></td>
+                <td><input type="text" id="On_board_service" name="On_board_service" required></td>
+            </tr>
+
+              <tr>
+                <td><label for="Flight_Distance">Flight Distance:</label></td>
+                <td> <input type="text" id="Flight_Distance" name="Flight_Distance" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="Leg_room_service">Leg Room Service:</label></td>
+                <td> <input type="text" id="Leg_room_service" name="Leg_room_service" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="Type_of_Travel">Type of Travel:</label></td>
+                <td> <input type="text" id="Type_of_Travel" name="Type_of_Travel" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="Age">Age:</label></td>
+                <td> <input type="text" id="Age" name="Age" required></td>
+            </tr>
+
+             <tr>
+                <td><label for="Ease_of_Online_booking">Ease of Online Booking:</label></td>
+                <td> <input type="text" id="Ease_of_Online_booking" name="Ease_of_Online_booking" required></td>
+            </tr>
+
+
+
+            <tr>
+                <td><label for="Class">Class:</label></td>
+                <td><input type="text" name="Class" id="Class" required></td>
+            </tr>
+             <tr>
+                <td><label for="Online_boarding">Online Boarding:</label></td>
+                <td><input type="text" name="Online_boarding" id="Online_boarding" required></td>
+            </tr>
+            <tr>
+                <td><button onclick="document.location='Result.html'">Predict</button></td>
+            </tr>
+        </table>
+
+    </form>
+{% if result %}
+    <h1>Prediction Result</h1>
+    <p>The Customer Satisfaction : {{ result }}</p>
+{% endif %}
+</body>
+
+</html>
